@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de Administración - LogiTrans</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+
+<body>
+  <!-- =========================
+       🔷 Encabezado principal
+       ========================= -->
+  <header class="navbar">
+    <h1>🚛 Panel de Administración</h1>
+    <p>Gestión de envíos y camiones — LogiTrans Col</p>
+    <div style="position:absolute; right:16px; top:12px;">
+      <button id="logoutBtn">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <!-- =========================
+       📊 Panel principal
+       ========================= -->
+  <main class="dashboard">
+    <!-- 📦 Solicitudes de recorridos -->
+    <section class="solicitudes">
+      <h2>📦 Solicitudes de recorridos</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Remitente</th>
+            <th>Origen</th>
+            <th>Destino</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="solicitudes-body">
+          <tr><td colspan="6">Cargando datos...</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- =========================
+         🚚 Panel de camiones
+         ========================= -->
+    <div class="paneles">
+      <section class="camiones">
+        <h2>🚚 Camiones en operación</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Placa</th>
+              <th>Conductor</th>
+              <th>Estado</th>
+              <th>Recorrido</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="camiones-body">
+            <tr><td colspan="6">Cargando camiones...</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- =========================
+           🧭 Asignación manual
+           ========================= -->
+      <section class="asignar">
+        <h2>🧭 Asignar recorrido manualmente</h2>
+        <form id="form-asignar">
+          <label for="camion-select">Seleccionar camión:</label>
+          <select id="camion-select" required></select>
+
+          <label for="origen-asign">Origen:</label>
+          <input type="text" id="origen-asign" placeholder="Ciudad de origen" required />
+
+          <label for="destino-asign">Destino:</label>
+          <input type="text" id="destino-asign" placeholder="Ciudad destino" required />
+
+          <button type="submit" class="btn">Asignar recorrido</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- =========================
+       🧾 Modal de asignación
+       ========================= -->
+  <div id="modal-asignacion" class="modal" style="display:none;">
+    <div class="modal-content">
+      <h3>Asignar pedido a camión</h3>
+      <select id="select-pedido"></select>
+      <div class="botones-modal">
+        <button id="btn-assign">Asignar</button>
+        <button id="btn-cancel">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       ⚙️ Pie de página
+       ========================= -->
+  <footer>
+    © 2025 LogiTrans S.A.S — Todos los derechos reservados
+  </footer>
+
+  <!-- =========================
+       📜 Scripts
+       ========================= -->
+  <script src="js/utils.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

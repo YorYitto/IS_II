@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogiTrans Col - Registro</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Encabezado -->
+  <header class="hero">
+    <div class="logo">
+      <img src="imagenes/logo_logitrans_col.jpg" alt="Logo LogiTrans" />
+      <h1>LogiTrans Col</h1>
+      <p>Únete a nuestra red de transporte confiable</p>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <main class="container">
+    <div class="login-card">
+      <h2>Crear Cuenta</h2>
+      <p>Regístrate para empezar a gestionar tus envíos</p>
+
+      <!-- Formulario de registro -->
+      <form id="registerForm">
+        <div class="input-group">
+          <input type="text" id="fullname" required placeholder=" " />
+          <label for="fullname">Nombre completo</label>
+        </div>
+
+        <div class="input-group">
+          <input type="email" id="email" required placeholder=" " />
+          <label for="email">Correo electrónico</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" required placeholder=" " />
+          <label for="password">Contraseña</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="confirmPassword" required placeholder=" " />
+          <label for="confirmPassword">Confirmar contraseña</label>
+        </div>
+
+        <button type="submit" class="btn">Crear cuenta</button>
+        <div id="message"></div>
+      </form>
+
+      <!-- Enlace para regresar al login -->
+      <div class="separator">
+        <span>¿Ya tienes cuenta?</span>
+      </div>
+      <a href="index.html" class="link">🔑 Inicia sesión aquí</a>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    © 2025 LogiTrans Col S.A.S — Todos los derechos reservados
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

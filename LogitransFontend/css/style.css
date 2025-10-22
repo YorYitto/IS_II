@@ -1,0 +1,319 @@
+/* ================================
+   Logitrans — style.css
+   Diseño completo del login y registro
+   ================================ */
+
+   :root {
+    --primary: #06b6d4;
+    --accent: #7c3aed;
+    --bg: #0f172a;
+    --text: #e2e8f0;
+    --muted: rgba(255, 255, 255, 0.75);
+  }
+  
+  /* Reset general */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+  }
+  
+  /* ===============================
+     Fondo principal con imagen
+     =============================== */
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    overflow-x: hidden;
+    background-image: url("../imagenes/logo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+  }
+  
+  /* Filtro oscuro y blur */
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+  }
+  
+  /* Contenido sobre el fondo */
+  header, main, footer {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ===============================
+     Encabezado / Logo
+     =============================== */
+  .hero {
+    text-align: center;
+    margin-top: 20px;
+    animation: fadeDown 1.5s ease;
+  }
+  
+  .logo img {
+    width: 80px;
+    border-radius: 50%;
+    animation: floatTruck 4s ease-in-out infinite;
+  }
+  
+  .logo h1 {
+    font-size: 26px;
+    margin-top: 10px;
+    color: var(--primary);
+    letter-spacing: 0.6px;
+  }
+  
+  .logo p {
+    font-size: 14px;
+    color: var(--muted);
+  }
+  
+  /* ===============================
+     Contenedor principal
+     =============================== */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    padding: 20px;
+    animation: fadeIn 1.5s ease;
+  }
+  
+  /* Tarjeta principal de login / registro */
+  .login-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    width: 340px;
+    text-align: center;
+    animation: slideUp 1.5s ease;
+    backdrop-filter: blur(10px);
+  }
+  
+  .login-card h2 {
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  
+  .login-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  
+  /* ===============================
+     Inputs de formularios
+     =============================== */
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.3);
+  }
+  
+  .input-group label {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-size: 13px;
+    color: var(--muted);
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+  
+  /* Etiqueta flotante */
+  .input-group input:focus + label,
+  .input-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 11px;
+    color: var(--primary);
+  }
+  
+  /* ===============================
+     Botones
+     =============================== */
+  .btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+  }
+  
+  .btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* ===============================
+     Mensajes del login / registro
+     =============================== */
+  #message {
+    margin-top: 14px;
+    font-size: 13px;
+    text-align: center;
+    min-height: 16px;
+  }
+  
+  .success { color: #10b981; }
+  .error { color: #ef4444; }
+  
+  /* ===============================
+     Separadores y enlaces
+     =============================== */
+  .separator {
+    margin: 20px 0;
+    position: relative;
+    text-align: center;
+    color: var(--muted);
+  }
+  
+  .separator::before, .separator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .separator::before { left: 0; }
+  .separator::after { right: 0; }
+  
+  .link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  .link:hover {
+    color: var(--accent);
+  }
+  
+  /* ===============================
+     Google Sign-In
+     =============================== */
+  .g_id_signin {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #g_id_onload {
+    display: none;
+  }
+  
+  /* ===============================
+     Footer
+     =============================== */
+  footer {
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--muted);
+    text-align: center;
+  }
+  
+  /* ===============================
+     Animaciones
+     =============================== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes floatTruck {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  
+  /* ===============================
+     Responsividad
+     =============================== */
+  @media (max-width: 768px) {
+    .login-card {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .login-card {
+      width: 100%;
+      border-radius: 0;
+      height: 100vh;
+      justify-content: center;
+    }
+  
+    footer {
+      font-size: 11px;
+    }
+  }
+
+  /* ===============================
+   Enlace de crear cuenta / registro
+   =============================== */
+.link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent);
+  transform: scale(1.05);
+}
+  

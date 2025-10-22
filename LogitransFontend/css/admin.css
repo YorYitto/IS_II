@@ -1,0 +1,149 @@
+:root {
+  --primary: #06b6d4;
+  --secondary: #0ea5e9;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --accent: #3b82f6;
+  --success: #10b981;
+  --warning: #facc15;
+  --danger: #ef4444;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR */
+.navbar {
+  background: var(--card);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--primary);
+}
+
+.navbar h1 {
+  color: var(--primary);
+  font-size: 22px;
+}
+
+.navbar p {
+  color: var(--text);
+  opacity: 0.8;
+}
+
+/* DASHBOARD */
+.dashboard {
+  padding: 30px;
+}
+
+section {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  margin-bottom: 25px;
+}
+
+h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+/* TABLAS */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: left;
+}
+
+th {
+  background: #1e293b;
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status.pendiente { background-color: var(--warning); }
+.status.en_ruta { background-color: var(--accent); color: white; }
+.status.entregado { background-color: var(--success); color: white; }
+.status.disponible { background-color: var(--success); color: white; }
+
+/* BOTONES */
+.btn, .btn-asignar {
+  background: var(--primary);
+  border: none;
+  padding: 8px 12px;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.btn:hover, .btn-asignar:hover {
+  transform: scale(1.05);
+  background: var(--secondary);
+}
+
+/* PANEL DOBLE */
+.paneles {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.camiones, .asignar {
+  flex: 1;
+  min-width: 360px;
+}
+
+/* FORMULARIO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, select {
+  background: #1e293b;
+  border: 1px solid var(--accent);
+  color: var(--text);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+button.btn {
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: var(--card);
+  padding: 15px;
+  text-align: center;
+  color: var(--text);
+  opacity: 0.8;
+  border-top: 2px solid var(--primary);
+}

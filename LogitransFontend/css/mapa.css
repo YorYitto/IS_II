@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004aad;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+#controls input {
+  padding: 5px 10px;
+  font-size: 1rem;
+  width: 150px;
+}
+
+#controls button {
+  padding: 5px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+#map {
+  height: 70vh;
+  width: 100%;
+}
+
+#sendRequest {
+  display: block;
+  margin: 15px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Fondo blanco para el panel de rutas */
+.leaflet-routing-container {
+    background-color: white !important;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    max-width: 300px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Ajuste opcional de scroll si hay muchas rutas */
+.leaflet-routing-container .leaflet-routing-geocoder {
+    max-height: 400px;
+    overflow-y: auto;
+}

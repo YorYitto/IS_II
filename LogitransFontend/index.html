@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogiTrans Col - Inicio de Sesión</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- Encabezado -->
+  <header class="hero">
+    <div class="logo">
+      <img src="imagenes/logo_logitrans_col.jpg" alt="Logo LogiTrans" />
+      <h1>LogiTrans Col</h1>
+      <p>Conectando destinos, entregando confianza</p>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <main class="container">
+    <div class="login-card">
+      <h2>Inicio de Sesión</h2>
+      <p>Accede con tu cuenta para gestionar tus envíos</p>
+
+      <!-- Formulario de login -->
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" id="username" required placeholder=" " />
+          <label for="username">Usuario o correo</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" required placeholder=" " />
+          <label for="password">Contraseña</label>
+        </div>
+
+        <button type="submit" class="btn">Iniciar sesión</button>
+        <div id="message"></div>
+      </form>
+
+      <!-- Separador -->
+      <div class="separator">
+        <span>o</span>
+      </div>
+
+      <!-- Google Sign-In (se conserva tu HTML) -->
+      <div id="g_id_onload"
+           data-client_id="TU_CLIENT_ID_AQUI"
+           data-context="signin"
+           data-ux_mode="popup"
+           data-callback="handleCredentialResponse"
+           data-auto_prompt="false">
+      </div>
+
+      <div class="g_id_signin"
+           data-type="standard"
+           data-shape="rectangular"
+           data-theme="outline"
+           data-text="signin_with"
+           data-size="large"
+           data-logo_alignment="left">
+      </div>
+
+      <!-- Enlace de registro -->
+      <div class="separator">
+        <span>¿No tienes cuenta?</span>
+      </div>
+      <a href="register.html" class="link">📝 Crear cuenta nueva</a>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    © 2025 LogiTrans Col S.A.S — Todos los derechos reservados
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="js/utils.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/googleAuth.js"></script>
+</body>
+</html>

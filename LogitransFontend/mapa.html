@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LogiTrans - Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- CSS del proyecto -->
+  <link rel="stylesheet" href="css/mapa.css">
+  <style>
+    /* pequeño estilo para el mapa si no lo tienes */
+    #map { height: 70vh; width: 100%; margin-bottom: 12px; }
+    #controls { display:flex; gap:8px; padding:8px; align-items:center; }
+  </style>
+</head>
+<body>
+
+  <header>
+    Bienvenido, <span id="username">Usuario</span>
+  </header>
+
+  <div id="controls">
+    <input type="text" id="origen" placeholder="Origen">
+    <input type="text" id="destino" placeholder="Destino">
+    <button id="calcular">Calcular</button>
+  </div>
+
+  <div id="map"></div>
+
+  <button id="sendRequest">Enviar solicitud</button>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.min.js"></script>
+
+  <!-- JS del proyecto -->
+  <script src="js/utils.js"></script>
+  <script src="js/mapa.js"></script>
+</body>
+</html>
